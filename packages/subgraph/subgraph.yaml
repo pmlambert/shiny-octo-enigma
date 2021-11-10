@@ -1,0 +1,144 @@
+specVersion: 0.0.2
+schema:
+  file: ./src/schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ViperSwap VINCI/WONE LP
+    network: harmony
+    source:
+      address: "0xca3680580e01bd12cc86818fff62eda2d255677c"
+      abi: IERC20
+      startBlock: 1
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: IERC20
+          file: ../hardhat/artifacts/contracts/interfaces.sol/IERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: SushiSwap VINCI/WONE LP
+    network: harmony
+    source:
+      address: "0x12f5fe3ab36ced7fb1065b260a0d244eaa6e5584"
+      abi: IERC20
+      startBlock: 1
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: IERC20
+          file: ../hardhat/artifacts/contracts/interfaces.sol/IERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: OpenSwap VINCI/WONE LP
+    network: harmony
+    source:
+      address: "0x5c6640c144fae3e4e75e6c610fdb74e86286385f"
+      abi: IERC20
+      startBlock: 1
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: IERC20
+          file: ../hardhat/artifacts/contracts/interfaces.sol/IERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: LootSwap VINCI/WONE LP
+    network: harmony
+    source:
+      address: "0x75903f7343918058525eba1fc26595d174ef5d44"
+      abi: IERC20
+      startBlock: 1
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: IERC20
+          file: ../hardhat/artifacts/contracts/interfaces.sol/IERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: SeeSwap VINCI/WONE LP
+    network: harmony
+    source:
+      address: "0xf987f343b6e229c5b6ce3599cac24d922c70dabe"
+      abi: IERC20
+      startBlock: 1
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: IERC20
+          file: ../hardhat/artifacts/contracts/interfaces.sol/IERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: MochiSwap VINCI/WONE LP
+    network: harmony
+    source:
+      address: "0x79aa29e13e054df9d931728b4e33d9fb458ac4b8"
+      abi: IERC20
+      startBlock: 1
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Holder
+      abis:
+        - name: IERC20
+          file: ../hardhat/artifacts/contracts/interfaces.sol/IERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+  # - kind: ethereum/contract
+  #   name: ViperSwap VINCI/WONE LP Farming contract
+  #   network: harmony
+  #   source:
+  #     address: "0xe112217c21661623a90bc64f5cbe644906d9e923"
+  #     abi: IERC20
+  #     startBlock: 1
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.5
+  #     language: wasm/assemblyscript
+  #     entities:
+  #       - Holder
+  #     abis:
+  #       - name: Breeder
+  #         file: ../hardhat/artifacts/contracts/interfaces.sol
+  #     eventHandlers:
+  #       - event: Deposit(indexed address,indexed address,uint256)
+  #         handler: handleDeposit
+  #     file: ./src/mapping.ts

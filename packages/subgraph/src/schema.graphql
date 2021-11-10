@@ -1,0 +1,4 @@
+type Holder @entity {
+  id: ID!
+  points: BigInt!
+}
